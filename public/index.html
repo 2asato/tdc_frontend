@@ -24,6 +24,23 @@
     <title></title>
   </head>
   <body ng-controller="mainController as ctrl">
-      {{ ctrl.message }}
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" ng-click="ctrl.goHome()" href="#">The Diamond Club</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" name="button"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" ng-click="ctrl.goHome()"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item" ng-click="ctrl.goTeams()"><a class="nav-link" href="#">Teams</a></li>
+                <li class="nav-item" ng-click="ctrl.goPlayers()"><a class="nav-link" href="#">Players</a></li>
+                <li class="nav-item" ng-click="ctrl.goLogin()"><a class="nav-link" href="#">Log In</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" ng-click="ctrl.goRegister()">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- navbar end -->
+
   </body>
 </html>
