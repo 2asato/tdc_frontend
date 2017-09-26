@@ -157,10 +157,25 @@ this.editPlayer = function(updatedPlayer) {
   }).then(function(response) {
     console.log(response);
     controller.player = {};
-    controller.goPlayerPage();
   }, function(err) {
     console.log(err);
   })
+  this.goPlayerPage();
+}
+
+// delete player
+this.deletePlayer = function(player_id) {
+  console.log(player_id)
+  $http({
+    method: 'DELETE',
+    url: this.url + '/players/' + player_id
+  }).then(function(response){
+    console.log(response);
+    controller.player = response.data;
+  }, function(err){
+    console.log(err);
+  })
+  this.goPlayers();
 }
 
 }]);
