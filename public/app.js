@@ -120,6 +120,21 @@ $http({
   this.goTeamPage();
 }
 
+// delete team
+  this.deleteTeam = function(team_id) {
+    console.log(team_id)
+    $http({
+      method: 'DELETE',
+      url: this.url + '/teams/' + team_id
+    }).then(function(response){
+      console.log(response);
+      controller.team = response.data;
+    }, function(err){
+      console.log(err);
+    })
+    controller.goTeams();
+  }
+
 
 
 
