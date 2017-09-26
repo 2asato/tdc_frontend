@@ -97,6 +97,7 @@ a.header {
   color: white;
 }
 
-.edit-link {
+.edit-link,
+#title-vid {
   text-align: center;
 }

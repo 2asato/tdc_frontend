@@ -1,5 +1,5 @@
 <div ng-if="ctrl.showRegister">
-    <form class="container" ng-submit="ctrl.processForm()">
+    <form class="container" ng-submit="ctrl.processForm(player)">
         <br>
         <h2>User Information</h2>
         <br>
@@ -16,9 +16,9 @@
             <div class="col">
                 <div class="form-group">
                     <label for="register" class="control-label">First Name</label>
-                    <input type="text" class="form-control" id="register" placeholder="Enter your first name" ng-model="ctrl.formdata.first_name">
+                    <input type="text" class="form-control" id="register" placeholder="Enter your first name" ng-model="player.first_name">
                     <label for="register" class="control-label">Last Name</label>
-                    <input type="text" class="form-control" id="register" placeholder="Enter your last name" ng-model="ctrl.formdata.last_name">
+                    <input type="text" class="form-control" id="register" placeholder="Enter your last name" ng-model="player.last_name">
                 </div>
             </div>
             <div class="col">

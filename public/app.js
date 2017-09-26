@@ -6,7 +6,7 @@ app.controller('mainController', ['$http', function($http) {
     let controller = this;
 
 this.message = "controller works";
-this.url = 'http://localhost:3000'
+this.url = 'https://thediamondclub-api.herokuapp.com'
 this.team = {};
 this.teams = [];
 this.player = {};
@@ -42,6 +42,7 @@ this.goHome = function() {
 
 // teams
 this.goTeams = function() {
+  this.getTeamsData();
   this.showMain = false;
   this.showTeams = true;
   this.showTeamPage = false;
@@ -56,6 +57,7 @@ this.goTeams = function() {
 
 // team profile
 this.goTeamPage = function() {
+  this.getTeamsData();
   this.showMain = false;
   this.showTeams = false;
   this.showTeamPage = true;
@@ -70,6 +72,8 @@ this.goTeamPage = function() {
 
 // player
 this.goPlayers = function() {
+  this.getPlayersData();
+  this.getTeamsData();
   this.showMain = false;
   this.showTeams = false;
   this.showTeamPage = false;
@@ -84,6 +88,7 @@ this.goPlayers = function() {
 
 // player profile
 this.goPlayerPage = function() {
+  this.getPlayersData();
   this.showMain = false;
   this.showTeams = false;
   this.showTeamPage = false;
@@ -97,6 +102,7 @@ this.goPlayerPage = function() {
 }
 
 this.goEdit = function() {
+  this.getPlayersData();
   this.showMain = false;
   this.showTeams = false;
   this.showTeamPage = false;
@@ -110,6 +116,7 @@ this.goEdit = function() {
 }
 
 this.goEditTeam = function() {
+  this.getTeamsData();
   this.showMain = false;
   this.showTeams = false;
   this.showTeamPage = false;
@@ -124,6 +131,7 @@ this.goEditTeam = function() {
 
 // register player
 this.goRegister = function() {
+  this.getTeamsData();
   this.showMain = false;
   this.showTeams = false;
   this.showTeamPage = false;
@@ -153,6 +161,7 @@ this.goRegisterTeam = function() {
 
 
 // teams
+this.getTeamsData = function() {
 $http({
   method: 'GET',
   url: this.url + '/teams',
@@ -160,6 +169,7 @@ $http({
   console.log(response)
   this.teams = response.data;
 }.bind(this))
+}
 
 // teams/id
   this.getTeam = function(team_id){
@@ -189,7 +199,8 @@ this.editTeam = function(updatedTeam) {
   }, function(err) {
     console.log(err);
   })
-  this.goTeamPage();
+  this.getTeamsData();
+  this.goTeams();
 }
 
 
@@ -205,6 +216,7 @@ this.editTeam = function(updatedTeam) {
     }, function(err){
       console.log(err);
     })
+    this.getTeamsData();
     controller.goTeams();
   }
 
@@ -240,6 +252,7 @@ this.editTeam = function(updatedTeam) {
 
 
 // players
+this.getPlayersData = function() {
 $http({
   method: 'GET',
   url: this.url + '/players',
@@ -247,6 +260,7 @@ $http({
   console.log(response)
   this.players = response.data;
 }.bind(this))
+}
 
 // player/id
   this.getPlayer = function(player_id){
@@ -276,7 +290,8 @@ this.editPlayer = function(updatedPlayer) {
   }, function(err) {
     console.log(err);
   })
-  this.goPlayerPage();
+  this.getPlayersData();
+  this.goPlayers();
 }
 
 // delete player
@@ -291,35 +306,52 @@ this.deletePlayer = function(player_id) {
   }, function(err){
     console.log(err);
   })
+  this.getPlayersData();
   this.goPlayers();
 }
 
-// register player
-this.processForm = function() {
-   console.log('processForm function . . .');
-   console.log('Formdata: ', this.formdata);
-$http({
-  method: 'POST',
-  url: this.url + '/players',
-  data: this.formdata
-}).then(function(response){
-  console.log("this.formdata", this.formdata);
- //  this.formdata = response.data
- this.formdata = response.data
-  console.log("response.data", response.data);
-  $http({
-    method: 'GET',
-    url: this.url + '/players',
-  }).then(function(response) {
-    console.log(response);
-    this.players = response.data;
-  }.bind(this));
-  console.log(response);
-}.bind(this)
-, function(err){
-  console.log(err);
-})
-}
+// this.processForm = function() {
+//    console.log('processForm function . . .');
+//    console.log('Formdata: ', this.formdata);
+//   //  this.formdata.first_name = "a"
+// $http({
+//   method: 'POST',
+//   url: this.url + '/players',
+//   data: this.formdata
+// }).then(function(response){
+//   console.log("this.formdata", this.formdata);
+//  //  this.formdata = response.data
+//  this.formdata = response.data
+//   console.log("response.data", response.data);
+//   $http({
+//     method: 'GET',
+//     url: this.url + '/players',
+//   }).then(function(response) {
+//     console.log(response);
+//     this.players = response.data;
+//   }.bind(this));
+//   console.log(response);
+// }.bind(this)
+// , function(err){
+//   console.log(err);
+// })
+// }
+
+//
+this.processForm = function(player){
+  this.player = player;
+  this.data.id = id;
+    $http({
+      method: 'POST',
+      url: this.url + '/teams/' + id + '/players',
+      data: { first_name: this.player.first_name,   last_name: this.player.last_name  },
+    }).then(function(res){
+      console.log('create player: ', res);
+      controller.player = res.data;
+    })
+  }
+
+
 
 
 }]);
