@@ -1,0 +1,67 @@
+<div ng-if="ctrl.showPlayerPage">
+    <div ng-show="ctrl.showPlayerPage">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col">
+                  <img id="player-profile" src="{{ ctrl.player.img }}" alt="" height="300" width="400">
+                </div>
+                <div class="col">
+                  <br>
+                  <br>
+                  <br>
+                  <h1>{{ ctrl.player.first_name }} {{ ctrl.player.last_name }} #{{ ctrl.player.number }}</h1>
+                  <h5>Height: {{ ctrl.player.height }} &nbsp; | &nbsp;  Weight: {{ ctrl.player.weight }} &nbsp; | &nbsp; {{ ctrl.player.hometown }}</h5>
+                  <h5>Bats: {{ ctrl.player.bats }} &nbsp; | &nbsp; Throws: {{ ctrl.player.bats}}</h5>
+                  <h5>Positions: {{ ctrl.player.positions }} &nbsp; | &nbsp; {{ ctrl.player.summer_team}}</h5>
+
+                </div>
+            </div>
+            <br>
+            <div class="school">
+                <h5>{{ ctrl.player.school }} &nbsp; | &nbsp; Class of {{ ctrl.player.graduation_year }} &nbsp; | &nbsp; GPA: {{ ctrl.player.gpa }}</h5>
+                <h5>College's interested in: {{ ctrl.player.college_interests}}</h5>
+                <h5>Academic interests: {{ ctrl.player.academic_interests}}</h5>
+            </div>
+            <br>
+            <br>
+            <div class="stats">
+              <table class="table">
+                  <thead>
+                      <tr id="player-stats">
+                          <th>Fastball</th>
+                          <th>Curve/Slider</th>
+                          <th>Changeup</th>
+                          <th>OF/IF Velo.</th>
+                          <th>60 YD</th>
+                          <th>30 YD</th>
+                          <th>L-Drill</th>
+                          <th>Broad Jump</th>
+                          <th>Med. Ball</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>{{ ctrl.player.fastball }} mph</td>
+                          <td>{{ ctrl.player.breaking_ball }} mph</td>
+                          <td>{{ ctrl.player.changup }} mph</td>
+                          <td>{{ ctrl.player.outfield_velo }} mph</td>
+                          <td>{{ ctrl.player.sixty_yd }} sec.</td>
+                          <td>{{ ctrl.player.thirty_yd }} sec.</td>
+                          <td>{{ ctrl.player.l_drill }} sec.</td>
+                          <td>{{ ctrl.player.broad_jump }}"</td>
+                          <td>{{ ctrl.player.med_ball }}'</td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="edit-link">
+      <a href="#" title="edit player" ng-click="ctrl.goEdit()">Edit Profile</a>
+    </div>
+    <br>
+</div>

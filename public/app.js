@@ -71,6 +71,19 @@ this.goPlayers = function() {
   this.showEdit = false;
 }
 
+// player profile
+this.goPlayerPage = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = true;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+}
+
+
 
 
 
@@ -107,5 +120,18 @@ $http({
   console.log(response)
   this.players = response.data;
 }.bind(this))
+
+// player/id
+  this.getPlayer = function(player_id){
+    console.log(player_id);
+  $http({
+    method: 'GET',
+    url: this.url + '/players/' + player_id,
+  }).then(function(response) {
+    console.log(response);
+    controller.player = response.data;
+  }.bind(this));
+  this.goPlayerPage();
+}
 
 }]);
