@@ -76,6 +76,15 @@ a.header {
   text-align: center;
 }
 
+#register-dropdown {
+  background-color: #343a40;
+  color: rgba(255,255,255,.5);
+}
+
+.btn:focus {
+  box-shadow: #343a40;
+}
+
 /*player profile*/
 .pic-and-name,
 .player-info,

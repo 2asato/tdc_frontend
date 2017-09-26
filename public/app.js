@@ -13,6 +13,7 @@ this.player = {};
 this.players = [];
 this.teamPlayers = [];
 this.formdata = {};
+this.teamformdata = {};
 this.showMain = true;
 this.showTeams = false;
 this.showTeamPage = false;
@@ -22,6 +23,7 @@ this.showLogin = false;
 this.showRegister = false;
 this.showEdit = false;
 this.showEditTeam = false;
+this.showRegisterTeam = false;
 
 // show/hide
 // home
@@ -35,6 +37,7 @@ this.goHome = function() {
   this.showRegister = false;
   this.showEdit = false;
   this.showEditTeam = false;
+  this.showRegisterTeam = false;
 }
 
 // teams
@@ -48,6 +51,7 @@ this.goTeams = function() {
   this.showRegister = false;
   this.showEdit = false;
   this.showEditTeam = false;
+  this.showRegisterTeam = false;
 }
 
 // team profile
@@ -61,6 +65,7 @@ this.goTeamPage = function() {
   this.showRegister = false;
   this.showEdit = false;
   this.showEditTeam = false;
+  this.showRegisterTeam = false;
 }
 
 // player
@@ -74,6 +79,7 @@ this.goPlayers = function() {
   this.showRegister = false;
   this.showEdit = false;
   this.showEditTeam = false;
+  this.showRegisterTeam = false;
 }
 
 // player profile
@@ -87,6 +93,7 @@ this.goPlayerPage = function() {
   this.showRegister = false;
   this.showEdit = false;
   this.showEditTeam = false;
+  this.showRegisterTeam = false;
 }
 
 this.goEdit = function() {
@@ -99,6 +106,7 @@ this.goEdit = function() {
   this.showRegister = false;
   this.showEdit = true;
   this.showEditTeam = false;
+  this.showRegisterTeam = false;
 }
 
 this.goEditTeam = function() {
@@ -111,9 +119,10 @@ this.goEditTeam = function() {
   this.showRegister = false;
   this.showEdit = false;
   this.showEditTeam = true;
+  this.showRegisterTeam = false;
 }
 
-// register
+// register player
 this.goRegister = function() {
   this.showMain = false;
   this.showTeams = false;
@@ -124,7 +133,24 @@ this.goRegister = function() {
   this.showRegister = true;
   this.showEdit = false;
   this.showEditTeam = false;
+  this.showRegisterTeam = false;
 }
+
+// register team
+this.goRegisterTeam = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+  this.showEditTeam = false;
+  this.showRegisterTeam = true;
+}
+
+
 
 // teams
 $http({
@@ -181,6 +207,34 @@ this.editTeam = function(updatedTeam) {
     })
     controller.goTeams();
   }
+
+// register team
+  this.processForm2 = function() {
+     console.log('processForm function . . .');
+     console.log('Formdata: ', this.teamformdata);
+  $http({
+    method: 'POST',
+    url: this.url + '/teams',
+    data: this.teamformdata
+  }).then(function(response){
+    console.log("this.formdata", this.teamformdata);
+   //  this.formdata = response.data
+   this.teamformdata = response.data
+    console.log("response.data", response.data);
+    $http({
+      method: 'GET',
+      url: this.url + '/teams',
+    }).then(function(response) {
+      console.log(response);
+      this.teams = response.data;
+    }.bind(this));
+    console.log(response);
+  }.bind(this)
+  , function(err){
+    console.log(err);
+  })
+  }
+
 
 
 
@@ -240,6 +294,7 @@ this.deletePlayer = function(player_id) {
   this.goPlayers();
 }
 
+// register player
 this.processForm = function() {
    console.log('processForm function . . .');
    console.log('Formdata: ', this.formdata);

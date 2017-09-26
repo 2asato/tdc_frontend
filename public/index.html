@@ -35,7 +35,14 @@
                 <li class="nav-item" ng-click="ctrl.goTeams()"><a class="nav-link" href="#">Teams</a></li>
                 <li class="nav-item" ng-click="ctrl.goPlayers()"><a class="nav-link" href="#">Players</a></li>
                 <li class="nav-item" ng-click="ctrl.goLogin()"><a class="nav-link" href="#">Log In</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" ng-click="ctrl.goRegister()">Register</a></li>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="register-dropdown">Register<span class="caret"></span>
+                    </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#" ng-click="ctrl.goRegisterTeam()">Team</a></li>
+                        <li><a href="#" ng-click="ctrl.goRegister()">Player</a></li>
+                      </ul>
+                </div>
             </ul>
         </div>
     </div>
@@ -108,6 +115,9 @@
 
 <!-- register -->
 <section id="register" ng-include="'./register.html'"></section>
+
+<!-- register team -->
+<section id="register-team" ng-include="'./register_team.html'"></section>
 
 <!-- footer -->
     <footer class="py-5 bg-dark">
