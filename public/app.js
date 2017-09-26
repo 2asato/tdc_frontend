@@ -47,6 +47,19 @@ this.goTeams = function() {
   this.showEdit = false;
 }
 
+// team profile
+this.goTeamPage = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = true;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+}
+
+
 
 // teams
 $http({
@@ -56,6 +69,22 @@ $http({
   console.log(response)
   this.teams = response.data;
 }.bind(this))
+
+// teams/id
+  this.getTeam = function(team_id){
+    console.log(team_id);
+  $http({
+    method: 'GET',
+    url: this.url + '/teams/' + team_id,
+  }).then(function(response) {
+    console.log(response);
+    controller.team = response.data;
+  }.bind(this));
+  this.goTeamPage();
+}
+
+
+
 
 // players
 $http({

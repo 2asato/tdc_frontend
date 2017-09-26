@@ -1,0 +1,61 @@
+<div ng-if="ctrl.showTeamPage">
+    <div ng-show="ctrl.showTeamPage">
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1 class="mt-4">{{ ctrl.team.name }}</h1>
+                    <img src="{{ ctrl.team.logo }}" height="200" width="300">
+                    <br>
+                    <br>
+                    <br>
+                    <p>{{ ctrl.team.about }}</p>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="mt-4">Contact Us</h2>
+                    <p>Director: {{ ctrl.team.director }}</p>
+                    <address class="">
+                    <i class="fa fa-phone">  {{ ctrl.team.phone }}</i><br>
+                    <i class="fa fa-envelope">  <a href="mailto:#">{{ ctrl.team.email }}</a></i><br>
+                    <i class="fa fa-chrome">  <a href="{{ ctrl.team.website }}">{{ ctrl.team.ws }}</a></i><br>
+                    <i class="fa fa-facebook-official" aria-hidden="true">  <a href="{{ ctrl.team.facebook }}">  {{ ctrl.team.fb }}</a></i><br>
+                    <i class="fa fa-instagram">  <a href="{{ ctrl.team.instagram }}">{{ ctrl.team.ig }}</a></i><br>
+                    <i class="fa fa-twitter">  <a href="{{ ctrl.team.twitter }}">{{ ctrl.team.twit }}</a></i>
+                    </address>
+                </div>
+            </div>
+            <br>
+            <!-- <div ng-if="ctrl.team.id = ctrl.player.team_id"> -->
+            <h2>Players</h2>
+            <table class="table table-hover" id="myTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>#</th>
+                        <th>Position(s)</th>
+                        <th>School</th>
+                        <th>Graduation Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="player in ctrl.players">
+                        <td><img src="{{ player.img }}" height="50" width="50"></td>
+                        <td><a href="#" ng-click="ctrl.getPlayer(player.id)">{{ player.first_name }} {{ player.last_name }}</a></td>
+                        <td>{{ player.number }}</td>
+                        <td>{{ player.positions }}</td>
+                        <td>{{ player.school }}</td>
+                        <td>{{ player.graduation_year }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <!-- <div class="edit-link">
+              <a href="#">Edit Profile</a>
+            </div> -->
+            <br>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
