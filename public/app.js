@@ -59,6 +59,19 @@ this.goTeamPage = function() {
   this.showEdit = false;
 }
 
+// player
+this.goPlayers = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = true;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+}
+
+
 
 
 // teams
