@@ -83,6 +83,17 @@ this.goPlayerPage = function() {
   this.showEdit = false;
 }
 
+this.goEdit = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = true;
+}
+
 
 
 
@@ -132,6 +143,24 @@ $http({
     controller.player = response.data;
   }.bind(this));
   this.goPlayerPage();
+}
+
+// edit player
+this.editPlayer = function(updatedPlayer) {
+  console.log(updatedPlayer);
+  $http({
+    method: 'PUT',
+    url: this.url + '/players/' + this.player.id,
+    data: {
+      player:updatedPlayer
+    }
+  }).then(function(response) {
+    console.log(response);
+    controller.player = {};
+    controller.goPlayerPage();
+  }, function(err) {
+    console.log(err);
+  })
 }
 
 }]);

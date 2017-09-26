@@ -1,0 +1,154 @@
+<div ng-if="ctrl.showEdit">
+  <form class="container" ng-submit="ctrl.editPlayer(updatedPlayer, player.id)">
+      <br>
+      <h2>User Information</h2>
+      <br>
+
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">First Name</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.first_name }}" value="{{ ctrl.player.first_name }}" ng-model="updatedPlayer.first_name">
+                  <label for="register" class="control-label">Last Name</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.last_name }}" value="{{ ctrl.player.last_name }}" ng-model="updatedPlayer.last_name">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Hometown</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.hometown }}" value="{{ ctrl.player.hometown }}" ng-model="updatedPlayer.hometown">
+                  <label for="register" class="control-label">Image</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.img }}" value="{{ ctrl.player.img }}" ng-model="updatedPlayer.img">
+              </div>
+          </div>
+      </div>
+      <br>
+      <h2>School Information</h2>
+      <br>
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">School</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.school }}" value="{{ ctrl.player.school }}" ng-model="updatedPlayer.school">
+                  <label for="register" class="control-label">Graduation Year</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.graduation_year }}" value="{{ ctrl.player.graduation_year }}" ng-model="updatedPlayer.graduation_year">
+                  <label for="register" class="control-label">GPA</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.gpa }}" value="{{ ctrl.player.gpa}}" ng-model="updatedPlayer.gpa">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Colleges Interested in</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.college_interests }}" value="{{ ctrl.player.college_interests }}" ng-model="updatedPlayer.college_interests">
+                  <label for="register" class="control-label">Academic Interests</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.academic_interests }}" value="{{ ctrl.player.academic_interests }}" ng-model="updatedPlayer.academic_interests">
+              </div>
+          </div>
+      </div>
+      <br>
+      <h2>Player Information</h2>
+      <br>
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Height</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.height }}" value="{{ ctrl.player.height }}" ng-model="updatedPlayer.height">
+                  <label for="register" class="control-label">Weight</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.weight }}" value="{{ ctrl.player.weight }}" ng-model="updatedPlayer.weight">
+                  <label for="register" class="control-label">Player Number</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.number }}" value="{{ ctrl.player.number }}" ng-model="updatedPlayer.number">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Bats</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.bats }}" value="{{ ctrl.player.bats }}" ng-model="updatedPlayer.bats">
+                  <label for="register" class="control-label">Throws</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.throws }}" value="{{ ctrl.player.throws }}" ng-model="updatedPlayer.throws">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Position(s)</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.positions }}" value="{{ ctrl.player.positions }}" ng-model="updatedPlayer.positions">
+                  <label for="register" class="control-label">Summer Team</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.summer_team }}" value="{{ ctrl.player.summer_team }}" ng-model="updatedPlayer.team">
+              </div>
+          </div>
+      </div>
+      <br>
+      <h2>Pitching/Fielding</h2>
+      <br>
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Fastball</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.fastball }}" value="{{ ctrl.player.fastball }}" ng-model="updatedPlayer.fastball">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Curve/Slider</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.breaking_ball }}" value="{{ ctrl.player.breaking_ball }}" ng-model="updatedPlayer.breaking_ball">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Changeup</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.changup }}" value="{{ ctrl.player.changup }}" ng-model="updatedPlayer.changup">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Outfield Velo.</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.outfield_velo }}" value="{{ ctrl.player.outfield_velo }}" ng-model="updatedPlayer.outfield_velo">
+              </div>
+          </div>
+      </div>
+      <br>
+      <h2>Field Test Scores</h2>
+      <br>
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">60 yd.</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.sixty_yd }}" value="{{ ctrl.player.sixty_yd }}" ng-model="updatedPlayer.sixty_yd">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">30 yd.</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.thirty_yd }}" value="{{ ctrl.player.thirty_yd }}" ng-model="updatedPlayer.thirty_yd">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">L-Drill</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.l_drill }}" value="{{ ctrl.player.l_drill }}" ng-model="updatedPlayer.l_drill">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Broad jump</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.broad_jump }}" value="{{ ctrl.player.broad_jump }}" ng-model="updatedPlayer.broad_jump">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Med. Ball</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.player.med_ball }}" value="{{ ctrl.player.med_ball }}" ng-model="updatedPlayer.med_ball">
+              </div>
+          </div>
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+        <input type="submit" class="submit btn btn-primary btn-lg btn-block" placeholder="Submit">
+      </div>
+      <br>
+      <br>
+ </form>
+</div>
+
+
+</div>
