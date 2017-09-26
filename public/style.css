@@ -1,0 +1,89 @@
+body {
+    padding-top: 54px;
+    font-family: 'Roboto Slab', serif;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+section {
+  background-color: lightgray;
+}
+
+header.masthead {
+    background: url('https://baseballnorthwest.com/wp-content/uploads/2016/01/stadium.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+}
+
+.overlay {
+  height: 400px;
+}
+
+header.masthead > .overlay {
+    padding: 5rem 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 992px) {
+    header.masthead > .overlay {
+        padding: 10rem 0;
+    }
+}
+
+.title-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #fff;
+}
+
+#team-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dd-button {
+  position: relative;
+}
+
+form {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-top: 5%;
+  margin-bottom: 5%;*/
+}
+
+.btn.btn-primary.btn-lg.btn-block {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.header {
+  color: black;
+}
+
+/*player profile*/
+.pic-and-name,
+.player-info,
+.school {
+  text-align: center;
+}
+
+#player-stats {
+  background-color: black;
+  color: white;
+}
+
+.edit-link {
+  text-align: center;
+}
