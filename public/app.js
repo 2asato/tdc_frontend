@@ -21,6 +21,7 @@ this.showPlayerPage = false;
 this.showLogin = false;
 this.showRegister = false;
 this.showEdit = false;
+this.showEditTeam = false;
 
 // show/hide
 // home
@@ -33,6 +34,7 @@ this.goHome = function() {
   this.showLogin = false;
   this.showRegister = false;
   this.showEdit = false;
+  this.showEditTeam = false;
 }
 
 // teams
@@ -45,6 +47,7 @@ this.goTeams = function() {
   this.showLogin = false;
   this.showRegister = false;
   this.showEdit = false;
+  this.showEditTeam = false;
 }
 
 // team profile
@@ -57,6 +60,7 @@ this.goTeamPage = function() {
   this.showLogin = false;
   this.showRegister = false;
   this.showEdit = false;
+  this.showEditTeam = false;
 }
 
 // player
@@ -69,6 +73,7 @@ this.goPlayers = function() {
   this.showLogin = false;
   this.showRegister = false;
   this.showEdit = false;
+  this.showEditTeam = false;
 }
 
 // player profile
@@ -81,6 +86,7 @@ this.goPlayerPage = function() {
   this.showLogin = false;
   this.showRegister = false;
   this.showEdit = false;
+  this.showEditTeam = false;
 }
 
 this.goEdit = function() {
@@ -92,11 +98,33 @@ this.goEdit = function() {
   this.showLogin = false;
   this.showRegister = false;
   this.showEdit = true;
+  this.showEditTeam = false;
 }
 
+this.goEditTeam = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+  this.showEditTeam = true;
+}
 
-
-
+// register
+this.goRegister = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = true;
+  this.showEdit = false;
+  this.showEditTeam = false;
+}
 
 // teams
 $http({
@@ -119,6 +147,25 @@ $http({
   }.bind(this));
   this.goTeamPage();
 }
+
+// edit team
+this.editTeam = function(updatedTeam) {
+  console.log(updatedTeam);
+  $http({
+    method: 'PUT',
+    url: this.url + '/teams/' + this.team.id,
+    data: {
+      team:updatedTeam
+    }
+  }).then(function(response) {
+    console.log(response);
+    controller.team = {};
+  }, function(err) {
+    console.log(err);
+  })
+  this.goTeamPage();
+}
+
 
 // delete team
   this.deleteTeam = function(team_id) {
@@ -192,5 +239,32 @@ this.deletePlayer = function(player_id) {
   })
   this.goPlayers();
 }
+
+this.processForm = function() {
+   console.log('processForm function . . .');
+   console.log('Formdata: ', this.formdata);
+$http({
+  method: 'POST',
+  url: this.url + '/players',
+  data: this.formdata
+}).then(function(response){
+  console.log("this.formdata", this.formdata);
+ //  this.formdata = response.data
+ this.formdata = response.data
+  console.log("response.data", response.data);
+  $http({
+    method: 'GET',
+    url: this.url + '/players',
+  }).then(function(response) {
+    console.log(response);
+    this.players = response.data;
+  }.bind(this));
+  console.log(response);
+}.bind(this)
+, function(err){
+  console.log(err);
+})
+}
+
 
 }]);

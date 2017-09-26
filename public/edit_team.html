@@ -1,0 +1,73 @@
+<div ng-if="ctrl.showEditTeam">
+  <form class="container" ng-submit="ctrl.editTeam(updatedTeam, team.id)">
+      <br>
+      <h2>Team Information</h2>
+      <br>
+
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Name</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.name }}" value="{{ ctrl.team.name }}" ng-model="updatedTeam.name">
+                  <label for="register" class="control-label">City, State</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.city }}" value="{{ ctrl.team.city }}" ng-model="updatedTeam.city">
+                  <label for="register" class="control-label">Director/Head Coach</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.director }}" value="{{ ctrl.team.director }}" ng-model="updatedTeam.director">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Type Of</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.type_of }}" value="{{ ctrl.team.type_of }}" ng-model="updatedTeam.type_of">
+                  <label for="register" class="control-label">Logo</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.logo }}" value="{{ ctrl.team.logo }}" ng-model="updatedTeam.logo">
+              </div>
+          </div>
+      </div>
+      <br>
+      <h2>Contact info</h2>
+      <br>
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Phone #</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.phone }}" value="{{ ctrl.team.phone }}" ng-model="updatedTeam.phone">
+                  <label for="register" class="control-label">Website</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.website }}" value="{{ ctrl.team.website }}" ng-model="updatedTeam.website">
+                  <label for="register" class="control-label">Email</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.email }}" value="{{ ctrl.team.email }}" ng-model="updatedTeam.email">
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Facebook</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.fb }}" value="{{ ctrl.team.fb }}" ng-model="updatedTeam.fb">
+                  <label for="register" class="control-label">Instagram</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.ig }}" value="{{ ctrl.team.ig }}" ng-model="updatedTeam.ig">
+                  <label for="register" class="control-label">Twitter</label>
+                  <input type="text" class="form-control" id="register" placeholder="{{ ctrl.team.twit }}" value="{{ ctrl.team.twit }}" ng-model="updatedTeam.twit">
+              </div>
+          </div>
+      </div>
+      <br>
+      <h2>About</h2>
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                <label for="comment"></label>
+                <textarea class="form-control" rows="5" id="about" placeholder="{{ ctrl.team.about }}" value="{{ ctrl.team.about }}" ng-model="updatedTeam.about"></textarea>
+              </div>
+          </div>
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+        <input type="submit" class="submit btn btn-primary btn-lg btn-block" placeholder="Submit">
+      </div>
+      <br>
+      <br>
+ </form>
+</div>
+
+
+</div>

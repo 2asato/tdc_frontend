@@ -6,6 +6,7 @@
             <div class="row">
                 <div class="col-sm-8">
                     <h1 class="mt-4">{{ ctrl.team.name }}</h1>
+                    <h5 class="mt-4">{{ ctrl.team.city}}</h5>
                     <img src="{{ ctrl.team.logo }}" height="200" width="300">
                     <br>
                     <br>
@@ -19,14 +20,14 @@
                     <i class="fa fa-phone">  {{ ctrl.team.phone }}</i><br>
                     <i class="fa fa-envelope">  <a href="mailto:#">{{ ctrl.team.email }}</a></i><br>
                     <i class="fa fa-chrome">  <a href="{{ ctrl.team.website }}">{{ ctrl.team.ws }}</a></i><br>
-                    <i class="fa fa-facebook-official" aria-hidden="true">  <a href="{{ ctrl.team.facebook }}">  {{ ctrl.team.fb }}</a></i><br>
-                    <i class="fa fa-instagram">  <a href="{{ ctrl.team.instagram }}">{{ ctrl.team.ig }}</a></i><br>
-                    <i class="fa fa-twitter">  <a href="{{ ctrl.team.twitter }}">{{ ctrl.team.twit }}</a></i>
+                    <i class="fa fa-facebook-official" aria-hidden="true">  <a href="https://facebook.com/{{ ctrl.team.fb }}">  {{ ctrl.team.fb }}</a></i><br>
+                    <i class="fa fa-instagram">  <a href="https://instagram.com/{{ ctrl.team.ig }}">{{ ctrl.team.ig }}</a></i><br>
+                    <i class="fa fa-twitter">  <a href="https://twitter.com/{{ ctrl.team.twit }}">{{ ctrl.team.twit }}</a></i>
                     </address>
                 </div>
             </div>
             <br>
-            <h2>Players</h2>
+            <!-- <h2>Players</h2>
             <table class="table table-hover" id="myTable">
                 <thead>
                     <tr>
@@ -48,11 +49,11 @@
                         <td>{{ player.graduation_year }}</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
             <br>
-            <!-- <div class="edit-link">
-              <a href="#">Edit Profile</a>
-            </div> -->
+            <div class="edit-link">
+              <a href="#" title="edit team" ng-click="ctrl.goEditTeam()">Edit Team</a>
+            </div>
             <br>
             <!-- </div> -->
         </div>
