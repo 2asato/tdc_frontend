@@ -22,6 +22,31 @@ this.showLogin = false;
 this.showRegister = false;
 this.showEdit = false;
 
+// show/hide
+// home
+this.goHome = function() {
+  this.showMain = true;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+}
+
+// teams
+this.goTeams = function() {
+  this.showMain = false;
+  this.showTeams = true;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+}
+
 
 // teams
 $http({
