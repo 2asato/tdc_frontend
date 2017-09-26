@@ -51,5 +51,42 @@
             </div>
         </header>
 <!-- header end -->
+
+<!-- main -->
+    <section ng-show="ctrl.showMain">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="p-5">
+                        <img class="img-fluid "src="http://4.bp.blogspot.com/-HsiD_iTC74s/UbNTZmrFIcI/AAAAAAAAAkk/6M7-ynChIdo/s1600/NP+BASEBALL.jpg">
+                    </div>
+                </div>
+                <div class="col-md-6 order-1">
+                    <div class="p-5">
+                        <h2 class="display-4" ng-click="ctrl.goTeams()" ><a href="#" class="header">Teams</a></h2>
+                        <p>The Diamond Club is made up of Seattle's best select teams, where the number one interest is the love of the game and developing players to achieve their highest potential on and off the field.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-2">
+                    <div class="p-5">
+                        <img class="img-fluid "src="http://www.brianmaggi.com/wp-content/uploads/2017/03/ct-high-school-baseball-pitch-count-illinois-met-20160524.jpeg">
+                    </div>
+                </div>
+                <div class="col-md-6 order-1">
+                    <div class="p-5">
+                        <h2 class="display-4" ng-click="ctrl.goPlayers()"id="players-head"><a href="#" class="header">Players</a></h2>
+                        <p>The Diamond Club represents the most elite players who show grit, perservenrance and a passion for all things baseball both on and off the field. It's a platform to showcase your passion and statstics for recruiters and scouts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- main end -->
+
   </body>
 </html>
