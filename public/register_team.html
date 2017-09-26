@@ -8,19 +8,22 @@
           <div class="col">
               <div class="form-group">
                   <label for="register" class="control-label">Name</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter team name">
+                  <input type="text" class="form-control" id="register" placeholder="Enter team name" ng-model="ctrl.teamformdata.name">
                   <label for="register" class="control-label">City, State</label>
-                  <input type="text" class="form-control" id="register" placeholder="City, State">
+                  <input type="text" class="form-control" id="register" placeholder="City, State" ng-model="ctrl.teamformdata.hometown">
                   <label for="register" class="control-label">Director/Head Coach</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter name">
+                  <input type="text" class="form-control" id="register" placeholder="Enter name"
+                  ng-model="ctrl.teamformdata.director">
               </div>
           </div>
           <div class="col">
               <div class="form-group">
                   <label for="register" class="control-label">Type Of</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter type of team">
+                  <input type="text" class="form-control" id="register" placeholder="Enter type of team"
+                  ng-model="ctrl.teamformdata.type_of">
                   <label for="register" class="control-label">Logo</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter img url">
+                  <input type="text" class="form-control" id="register" placeholder="Enter img url"
+                  ng-model="ctrl.teamformdata.logo">
               </div>
           </div>
       </div>
@@ -31,21 +34,24 @@
           <div class="col">
               <div class="form-group">
                   <label for="register" class="control-label">Phone #</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter phone #">
+                  <input type="text" class="form-control" id="register" placeholder="Enter phone #"
+                  ng-model="ctrl.teamformdata.phone">
                   <label for="register" class="control-label">Website</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter team website">
+                  <input type="text" class="form-control" id="register" placeholder="Enter team website"
+                  ng-model="ctrl.teamformdata.ws">
                   <label for="register" class="control-label">Email</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter team email">
+                  <input type="text" class="form-control" id="register" placeholder="Enter team email"
+                  ng-model="ctrl.teamformdata.email">
               </div>
           </div>
           <div class="col">
               <div class="form-group">
                   <label for="register" class="control-label">Facebook User Name</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter Facebook user name">
+                  <input type="text" class="form-control" id="register" placeholder="Enter Facebook user name" ng-model="ctrl.teamformdata.fb">
                   <label for="register" class="control-label">Instagram User Name</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter Instagram user name">
+                  <input type="text" class="form-control" id="register" placeholder="Enter Instagram user name" ng-model="ctrl.teamformdata.ig">
                   <label for="register" class="control-label">Twitter Handle</label>
-                  <input type="text" class="form-control" id="register" placeholder="Enter Twitter handle">
+                  <input type="text" class="form-control" id="register" placeholder="Enter Twitter handle" ng-model="ctrl.teamformdata.twit">
               </div>
           </div>
       </div>
@@ -55,7 +61,7 @@
           <div class="col">
               <div class="form-group">
                 <label for="comment"></label>
-                <textarea class="form-control" rows="5" id="about" placeholder=""></textarea>
+                <textarea class="form-control" rows="5" id="about" placeholder="" ng-model="ctrl.teamformdata.about"></textarea>
               </div>
           </div>
       </div>
