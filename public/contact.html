@@ -1,0 +1,38 @@
+<div ng-if="ctrl.showContact">
+
+
+  <form class="container" ng-submit="ctrl.processContact()">
+      <br>
+      <h2>Contact Form</h2>
+      <br>
+
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                  <label for="register" class="control-label">Name</label>
+                  <input type="text" class="form-control" id="register" placeholder="Enter your name">
+                  <label for="register" class="control-label">Email</label>
+                  <input type="text" class="form-control" id="register" placeholder="Enter your email address" >
+              </div>
+          </div>
+      </div>
+      <br>
+      <br>
+      <h2>Message</h2>
+      <div class="row">
+          <div class="col">
+              <div class="form-group">
+                <label for="comment"></label>
+                <textarea class="form-control" rows="5" id="about" placeholder="" ng-model="ctrl.teamformdata.about"></textarea>
+              </div>
+          </div>
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+        <input type="submit" class="submit btn btn-primary btn-lg btn-block" placeholder="Submit">
+      </div>
+      <br>
+      <br>
+ </form>
+</div>

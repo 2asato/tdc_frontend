@@ -15,6 +15,7 @@ this.players = [];
 this.teamPlayers = [];
 this.formdata = {};
 this.teamformdata = {};
+this.alumnis = [];
 this.showMain = true;
 this.showTeams = false;
 this.showTeamPage = false;
@@ -25,6 +26,8 @@ this.showRegister = false;
 this.showEdit = false;
 this.showEditTeam = false;
 this.showRegisterTeam = false;
+this.showContact = false;
+this.showAlumni = false;
 
 // show/hide
 // home
@@ -39,6 +42,8 @@ this.goHome = function() {
   this.showEdit = false;
   this.showEditTeam = false;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 // teams
@@ -54,6 +59,8 @@ this.goTeams = function() {
   this.showEdit = false;
   this.showEditTeam = false;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 // team profile
@@ -69,6 +76,8 @@ this.goTeamPage = function() {
   this.showEdit = false;
   this.showEditTeam = false;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 // player
@@ -85,6 +94,8 @@ this.goPlayers = function() {
   this.showEdit = false;
   this.showEditTeam = false;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 // player profile
@@ -100,6 +111,8 @@ this.goPlayerPage = function() {
   this.showEdit = false;
   this.showEditTeam = false;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 this.goEdit = function() {
@@ -114,6 +127,8 @@ this.goEdit = function() {
   this.showEdit = true;
   this.showEditTeam = false;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 this.goEditTeam = function() {
@@ -128,6 +143,8 @@ this.goEditTeam = function() {
   this.showEdit = false;
   this.showEditTeam = true;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 // register player
@@ -143,6 +160,8 @@ this.goRegister = function() {
   this.showEdit = false;
   this.showEditTeam = false;
   this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = false;
 }
 
 // register team
@@ -157,6 +176,41 @@ this.goRegisterTeam = function() {
   this.showEdit = false;
   this.showEditTeam = false;
   this.showRegisterTeam = true;
+  this.showContact = false;
+  this.showAlumni = false;
+}
+
+// contact
+this.goContact = function() {
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+  this.showEditTeam = false;
+  this.showRegisterTeam = false;
+  this.showContact = true;
+  this.showAlumni = false;
+}
+
+// alumni
+this.goAlumni = function() {
+  this.getAlumni();
+  this.showMain = false;
+  this.showTeams = false;
+  this.showTeamPage = false;
+  this.showPlayers = false;
+  this.showPlayerPage = false;
+  this.showLogin = false;
+  this.showRegister = false;
+  this.showEdit = false;
+  this.showEditTeam = false;
+  this.showRegisterTeam = false;
+  this.showContact = false;
+  this.showAlumni = true;
 }
 
 
@@ -311,6 +365,18 @@ this.deletePlayer = function(player_id) {
      this.getPlayersData();
      controller.goPlayers();
 }
+
+// alumni
+this.getAlumni = function() {
+$http({
+  method: 'GET',
+  url: this.url + '/alumnis',
+}).then(function(response) {
+  console.log(response)
+  this.alumnis= response.data;
+}.bind(this))
+}
+
 
 
 

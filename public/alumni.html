@@ -1,0 +1,32 @@
+<div ng-if="ctrl.showAlumni">
+  <br>
+  <br>
+<h1 class="alumni">Alumni</h1>
+  <div class="container">
+  <table class="table table-hover" id="myTable">
+
+      <thead>
+          <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Graduation Year</th>
+              <th>College</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr ng-repeat="alumni in ctrl.alumnis">
+              <td></td>
+              <td>{{ alumni.name }}</td>
+              <td>{{ alumni.grad_year }}</td>
+              <td>{{ alumni.college }}</td>
+              <td></td>
+          </tr>
+          <br>
+          <br>
+      </tbody>
+      <br>
+      <br>
+  </table>
+  </div>
+</div>

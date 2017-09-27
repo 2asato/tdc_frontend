@@ -40,6 +40,10 @@ header.masthead.players {
   background-size: 100% 100%;
 }
 
+.alumni {
+  text-align: center;
+}
+
 .overlay {
   height: 400px;
 }
@@ -61,6 +65,11 @@ header.masthead > .overlay {
   font-weight: 300;
   line-height: 1.1;
   color: #fff;
+}
+
+#contact-player {
+  display: block;
+  margin: 0 auto;
 }
 
 #team-table {
@@ -102,6 +111,7 @@ a.header {
 .btn:focus {
   box-shadow: #343a40;
 }
+
 
 /*player profile*/
 .pic-and-name,
