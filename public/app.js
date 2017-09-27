@@ -149,7 +149,7 @@ this.goEditTeam = function() {
 
 // register player
 this.goRegister = function() {
-  this.getTeamsData();
+  // this.getTeamsData();
   this.showMain = false;
   this.showTeams = false;
   this.showTeamPage = false;
