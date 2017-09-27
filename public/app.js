@@ -6,8 +6,8 @@ app.controller('mainController', ['$http', function($http) {
     let controller = this;
 
 this.message = "controller works";
-this.url = 'https://thediamondclub-api.herokuapp.com'
-// this.url = 'http://localhost:3000'
+// this.url = 'https://thediamondclub-api.herokuapp.com'
+this.url = 'http://localhost:3000'
 this.team = {};
 this.teams = [];
 this.player = {};
@@ -297,44 +297,23 @@ this.deletePlayer = function(player_id) {
   this.goPlayers();
 }
 
-// this.processForm = function() {
-//    console.log('processForm function . . .');
-//    console.log('Formdata: ', this.formdata);
-//   //  this.formdata.first_name = "a"
-// $http({
-//   method: 'POST',
-//   url: this.url + '/players',
-//   data: this.formdata
-// }).then(function(response){
-//   console.log("this.formdata", this.formdata);
-//  //  this.formdata = response.data
-//  this.formdata = response.data
-//   console.log("response.data", response.data);
-//   $http({
-//     method: 'GET',
-//     url: this.url + '/players',
-//   }).then(function(response) {
-//     console.log(response);
-//     this.players = response.data;
-//   }.bind(this));
-//   console.log(response);
-// }.bind(this)
-// , function(err){
-//   console.log(err);
-// })
-// }
+// register player
+  this.processForm = function() {
+     console.log('processForm function . . .');
+     console.log('Formdata: ', this.formdata);
+     $http({
+       method: 'POST',
+       url: this.url + '/players/',
+       data: this.formdata
+     }).then(function(result) {
+       console.log('Data from server: ',result);
+     });
+     this.getPlayersData();
+     controller.goPlayers();
+}
 
-//
-this.processForm = function(){
-    $http({
-      method: 'POST',
-      url: this.url + '/players/',
-      data: { first_name: this.player.first_name,   last_name: this.player.last_name  },
-    }).then(function(res){
-      console.log('create player: ', res);
-      controller.player = res.data;
-    })
-  }
+
+
 
 
 

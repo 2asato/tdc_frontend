@@ -22,6 +22,24 @@ header.masthead {
     background-size: 100% 100%;
 }
 
+header.masthead.teams {
+  background:url('http://media.istockphoto.com/photos/baseball-stadium-picture-id520876362?k=6&m=520876362&s=612x612&w=0&h=TZFCX0AWEYnZjwyUALEeJrCD_891ES9x7NsD4HUQirY=') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
+
+header.masthead.players {
+  background:url('http://media.istockphoto.com/photos/baseball-stadium-picture-id518433630?k=6&m=518433630&s=612x612&w=0&h=WAhF_vjGOvgtvsyTU5RSE5pZUBPb5xXp9ndEEh6TJmE=') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
+
 .overlay {
   height: 400px;
 }
