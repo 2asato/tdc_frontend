@@ -25,7 +25,7 @@
                 <tr ng-repeat="team in ctrl.teams">
                     <td><img src="{{ team.logo }}" height="50" width="50"></td>
                     <td><a href="#" ng-click="ctrl.getTeam(team.id)">{{ team.name }}</a></td>
-                    <td>{{ team.city }}</td>
+                    <td>{{ team.hometown }}</td>
                     <td><a href="{{ team.website }}" target="_blank">{{ team.website }}</td>
                     <td>{{ team.type_of }}</td>
                     <td><a href="#"><i class="fa fa-trash-o" title="Trash the team" aria-hidden="true" ng-click="ctrl.deleteTeam(team.id)"></i></a></td>
