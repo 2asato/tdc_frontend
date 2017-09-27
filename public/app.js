@@ -6,8 +6,8 @@ app.controller('mainController', ['$http', function($http) {
     let controller = this;
 
 this.message = "controller works";
-// this.url = 'https://thediamondclub-api.herokuapp.com'
-this.url = 'http://localhost:3000'
+this.url = 'https://thediamondclub-api.herokuapp.com'
+// this.url = 'http://localhost:3000'
 this.team = {};
 this.teams = [];
 this.player = {};
